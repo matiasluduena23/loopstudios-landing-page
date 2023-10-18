@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../assets/logo.svg';
+import hamburger from '../../assets/icon-hamburger.svg';
+import closeMenu from '../../assets/icon-close.svg';
+import NavbarLink from './NavbarLink.astro';
+---
+
+<nav>
+    <div class="container flex">
+        <a href="/" class="logo">
+            <Image src={logo} alt="logo icon name" />
+        </a>
+        <button
+            class="hamburger"
+            aria-controls="nav-items"
+            aria-expanded="false"
+        >
+            <Image src={hamburger} alt="hamburger icon menu" />
+        </button>
+
+        <NavbarLink />
+    </div>
+</nav>
+
+<style define:vars={{ menu: `url(${closeMenu.src})` }}>
+    nav {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        padding-top: 2rem;
+    }
+
+    .logo {
+        width: 10rem;
+        z-index: 10;
+    }
+
+    button {
+        background: transparent;
+        border: none;
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        button {
+            display: inline-block;
+            z-index: 10;
+        }
+
+        button[aria-expanded='true'] > img {
+            content: var(--menu);
+            height: 100%;
+        }
+    }
+</style>

@@ -1,0 +1,47 @@
+---
+import Navbar from './Navbar.astro';
+---
+
+<header>
+    <div class="container">
+        <h1>Immersive experiences that deliver</h1>
+    </div>
+</header>
+
+<style>
+    header {
+        background-image: url('../../assets/mobile/image-hero.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding-block: 6rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        line-height: 1;
+        color: white;
+        font-weight: 300;
+        font-family: var(--ff-2);
+        text-transform: uppercase;
+        border: 2px solid white;
+        padding: 2rem;
+        margin-block: 7rem;
+        max-width: 360px;
+    }
+
+    @media (min-width: 576px) {
+        header {
+            background-image: url('../../assets/desktop/image-hero.jpg');
+            background-position: top left 40%;
+            background-size: cover;
+        }
+    }
+
+    @media (min-width: 992px) {
+        header {
+            background-image: url('../../assets/desktop/image-hero.jpg');
+            background-position: top left;
+            background-size: 100%;
+        }
+    }
+</style>
