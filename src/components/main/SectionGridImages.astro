@@ -1,0 +1,97 @@
+---
+import ImageComponent from './ImageComponent.astro';
+
+import earthMobile from '../../assets/mobile/image-deep-earth.jpg';
+import earthDesktop from '../../assets/desktop/image-deep-earth.jpg';
+import arcadeMobile from '../../assets/mobile/image-night-arcade.jpg';
+import arcadeDesktop from '../../assets/desktop/image-night-arcade.jpg';
+import soccerMobile from '../../assets/mobile/image-soccer-team.jpg';
+import soccerDesktop from '../../assets/desktop/image-soccer-team.jpg';
+import gridMobile from '../../assets/mobile/image-grid.jpg';
+import gridDesktop from '../../assets/desktop/image-grid.jpg';
+import aboveMobile from '../../assets/mobile/image-from-above.jpg';
+import aboveDesktop from '../../assets/desktop/image-from-above.jpg';
+import pocketMobile from '../../assets/mobile/image-pocket-borealis.jpg';
+import pocketDesktop from '../../assets/desktop/image-pocket-borealis.jpg';
+import curiosityMobile from '../../assets/mobile/image-curiosity.jpg';
+import curiosityDesktop from '../../assets/desktop/image-curiosity.jpg';
+import makeMobile from '../../assets/mobile/image-fisheye.jpg';
+import makeDesktop from '../../assets/desktop/image-fisheye.jpg';
+---
+
+<section class="container">
+    <header>
+        <h2 class="title">Our creations</h2>
+        <a href="#">See all</a>
+    </header>
+    <div class="grid">
+        <ImageComponent
+            srcMobile={earthMobile}
+            srcDesktop={earthDesktop}
+            alt="earth image"
+        />
+        <ImageComponent
+            srcMobile={arcadeMobile}
+            srcDesktop={arcadeDesktop}
+            alt="arcade image"
+        />
+        <ImageComponent
+            srcMobile={soccerMobile}
+            srcDesktop={soccerDesktop}
+            alt="soccer image"
+        />
+        <ImageComponent
+            srcMobile={gridMobile}
+            srcDesktop={gridDesktop}
+            alt="grid image"
+        />
+        <ImageComponent
+            srcMobile={aboveMobile}
+            srcDesktop={aboveDesktop}
+            alt="above image"
+        />
+        <ImageComponent
+            srcMobile={pocketMobile}
+            srcDesktop={pocketDesktop}
+            alt="pocket image"
+        />
+        <ImageComponent
+            srcMobile={curiosityMobile}
+            srcDesktop={curiosityDesktop}
+            alt="curiosity image"
+        />
+        <ImageComponent
+            srcMobile={makeMobile}
+            srcDesktop={makeDesktop}
+            alt="make image"
+        />
+    </div>
+</section>
+
+<style>
+    section {
+        text-align: center;
+        position: relative;
+        margin-bottom: 4rem;
+    }
+
+    h2 {
+        margin-bottom: 3rem;
+    }
+
+    a {
+        position: absolute;
+        bottom: -70px;
+
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 400;
+        border: 2px solid var(--very-dark-gray);
+        color: black;
+        padding: 0.7rem 2rem;
+    }
+    .grid {
+        display: grid;
+        gap: 1rem;
+    }
+</style>

@@ -1,0 +1,8 @@
+---
+const { srcMobile, srcDesktop, alt } = Astro.props;
+---
+
+<picture>
+    <source srcset={srcDesktop.src} media="(min-width: 768px)" />
+    <img src={srcMobile.src} alt={alt} />
+</picture>
