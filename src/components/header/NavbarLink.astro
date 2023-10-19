@@ -1,41 +1,15 @@
 <ul id="nav-items" class="nav-items">
-    <li><a href="">About</a></li>
-    <li><a href="">Careers</a></li>
-    <li><a href="">Events</a></li>
-    <li><a href="">Products</a></li>
-    <li><a href="">Support</a></li>
+    <li><a class="link-item" href="">About</a></li>
+    <li><a class="link-item" href="">Careers</a></li>
+    <li><a class="link-item" href="">Events</a></li>
+    <li><a class="link-item" href="">Products</a></li>
+    <li><a class="link-item" href="">Support</a></li>
 </ul>
 
 <style>
     ul {
         display: flex;
         gap: 2rem;
-    }
-
-    a {
-        color: var(--dark-gray);
-        font-family: var(--ff-2);
-        color: white;
-        font-size: 16px;
-        position: relative;
-    }
-
-    a::after {
-        content: '';
-        display: block;
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        width: 25px;
-        margin-inline: auto;
-        background-color: transparent;
-        transition: background-color 300ms ease-in-out;
-    }
-
-    a:hover::after {
-        background-color: white;
     }
 
     @media (max-width: 768px) {

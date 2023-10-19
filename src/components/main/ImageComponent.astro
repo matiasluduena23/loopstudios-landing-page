@@ -1,8 +1,64 @@
 ---
-const { srcMobile, srcDesktop, alt } = Astro.props;
+const { srcMobile, srcDesktop, alt, title } = Astro.props;
 ---
 
-<picture>
-    <source srcset={srcDesktop.src} media="(min-width: 768px)" />
-    <img src={srcMobile.src} alt={alt} />
-</picture>
+<div>
+    <div class="shadow"></div>
+    <picture>
+        <source srcset={srcDesktop.src} media="(min-width: 600px)" />
+        <img src={srcMobile.src} alt={alt} />
+    </picture>
+    <h3>{title}</h3>
+</div>
+
+<style>
+    div {
+        position: relative;
+        cursor: pointer;
+    }
+
+    img {
+        height: 100%;
+    }
+
+    .shadow {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.4) 10%,
+            transparent
+        );
+    }
+
+    h3 {
+        position: absolute;
+        color: #e0e0e0;
+        bottom: 25px;
+        left: 1rem;
+        width: 130px;
+        font-family: var(--ff-2);
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: start;
+        font-size: 1.5rem;
+    }
+
+    div:hover .shadow {
+        background: rgb(224, 224, 224);
+        filter: opacity(0.7);
+    }
+
+    div:hover h3 {
+        color: black;
+    }
+
+    @media (min-width: 600px) {
+        div {
+            max-width: 280px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+</style>

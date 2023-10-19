@@ -29,41 +29,49 @@ import makeDesktop from '../../assets/desktop/image-fisheye.jpg';
             srcMobile={earthMobile}
             srcDesktop={earthDesktop}
             alt="earth image"
+            title="deep earth"
         />
         <ImageComponent
             srcMobile={arcadeMobile}
             srcDesktop={arcadeDesktop}
             alt="arcade image"
+            title="night arcade"
         />
         <ImageComponent
             srcMobile={soccerMobile}
             srcDesktop={soccerDesktop}
             alt="soccer image"
+            title="soccer team vr"
         />
         <ImageComponent
             srcMobile={gridMobile}
             srcDesktop={gridDesktop}
             alt="grid image"
+            title="the grid"
         />
         <ImageComponent
             srcMobile={aboveMobile}
             srcDesktop={aboveDesktop}
             alt="above image"
+            title="from up above vr"
         />
         <ImageComponent
             srcMobile={pocketMobile}
             srcDesktop={pocketDesktop}
             alt="pocket image"
+            title="pocket borealis"
         />
         <ImageComponent
             srcMobile={curiosityMobile}
             srcDesktop={curiosityDesktop}
             alt="curiosity image"
+            title="the curiosity"
         />
         <ImageComponent
             srcMobile={makeMobile}
             srcDesktop={makeDesktop}
             alt="make image"
+            title="make it fisheye"
         />
     </div>
 </section>
@@ -72,26 +80,54 @@ import makeDesktop from '../../assets/desktop/image-fisheye.jpg';
     section {
         text-align: center;
         position: relative;
-        margin-bottom: 4rem;
+        margin-bottom: 10rem;
     }
 
-    h2 {
+    header {
         margin-bottom: 3rem;
     }
 
     a {
         position: absolute;
         bottom: -70px;
-
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        width: fit-content;
         text-transform: uppercase;
         letter-spacing: 2px;
         font-weight: 400;
         border: 2px solid var(--very-dark-gray);
         color: black;
-        padding: 0.7rem 2rem;
+        padding: 0.6rem 4rem;
+        transition: background-color 200ms ease-in;
     }
+
+    a:hover {
+        background-color: black;
+        color: white;
+    }
+
     .grid {
         display: grid;
         gap: 1rem;
+    }
+
+    @media (min-width: 600px) {
+        .grid {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: auto;
+        }
+
+        a {
+            position: static;
+            margin: 0 0 0.4rem 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 </style>
