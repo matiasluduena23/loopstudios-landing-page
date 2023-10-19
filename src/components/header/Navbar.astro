@@ -6,7 +6,7 @@ import closeMenu from '../../assets/icon-close.svg';
 import NavbarLink from './NavbarLink.astro';
 ---
 
-<nav>
+<nav class="navbar">
     <div class="container flex">
         <a href="/" class="logo">
             <Image src={logo} alt="logo icon name" />
@@ -28,8 +28,14 @@ import NavbarLink from './NavbarLink.astro';
         position: fixed;
         width: 100%;
         top: 0;
-        padding-top: 2rem;
+        padding-top: 1.2rem;
         z-index: 10;
+        transition: background-color 200ms ease-in-out;
+    }
+
+    .scrolled {
+        background-color: black;
+        padding-block: 1.2rem;
     }
 
     .logo {
@@ -49,9 +55,15 @@ import NavbarLink from './NavbarLink.astro';
             z-index: 10;
         }
 
+        button > img {
+            transform-origin: center;
+            transition: transform 300ms ease-in-out;
+        }
+
         button[aria-expanded='true'] > img {
             content: var(--menu);
             height: 100%;
+            transform: rotate(180deg);
         }
     }
 </style>
